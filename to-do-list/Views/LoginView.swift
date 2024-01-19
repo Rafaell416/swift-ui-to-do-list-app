@@ -14,7 +14,7 @@ struct LoginView: View {
 	var body: some View {
 		NavigationView {
 			VStack {
-				HeaderView()
+				HeaderView(title: "To Do List", subtitle: "Get things done", rotationAngle: 15, backgroundColor: .pink)
 				
 				Form {
 					TextField("Email Address", text: $email)
@@ -42,6 +42,7 @@ struct LoginView: View {
 					}
 					.padding(.vertical, 20)
 				}
+				.offset(y: -50)
 				
 				VStack {
 					Text("New around here?")
@@ -49,6 +50,7 @@ struct LoginView: View {
 				}
 				.padding(.bottom, 50)
 			}
+			.background(Color("LightGrayBackground"))
 		}
 	}
 }
