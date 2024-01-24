@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		053ADED12B5ED49600A6293F /* TLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053ADED02B5ED49600A6293F /* TLButton.swift */; };
 		057A32F92B56E1D100B858E0 /* to_do_listApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057A32F82B56E1D100B858E0 /* to_do_listApp.swift */; };
 		057A32FB2B56E1D100B858E0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057A32FA2B56E1D100B858E0 /* MainView.swift */; };
 		057A32FD2B56E1D300B858E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 057A32FC2B56E1D300B858E0 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		053ADED02B5ED49600A6293F /* TLButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLButton.swift; sourceTree = "<group>"; };
 		057A32F52B56E1D100B858E0 /* to-do-list.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "to-do-list.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		057A32F82B56E1D100B858E0 /* to_do_listApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = to_do_listApp.swift; sourceTree = "<group>"; };
 		057A32FA2B56E1D100B858E0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				05EAC7492B58DCB400CB4760 /* RegisterView.swift */,
 				05EAC74B2B58DE6D00CB4760 /* ToDoListItemView.swift */,
 				05EAC75D2B58F7A200CB4760 /* HeaderView.swift */,
+				053ADED02B5ED49600A6293F /* TLButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05EAC7482B58DCA200CB4760 /* LoginView.swift in Sources */,
+				053ADED12B5ED49600A6293F /* TLButton.swift in Sources */,
 				057A32FB2B56E1D100B858E0 /* MainView.swift in Sources */,
 				05EAC75C2B58E79F00CB4760 /* RegisterViewViewModel.swift in Sources */,
 				05EAC7522B58E4F000CB4760 /* MainViewViewModel.swift in Sources */,
