@@ -22,7 +22,7 @@ struct ToDoListItemView: View {
 			Spacer()
 			
 			Button {
-				viewModel.toggle(itemId: item.id)
+				viewModel.toggle(for: item)
 			} label: {
 				Image(systemName: item.isDone ? "checkmark.circle.fill": "circle")
 			}
