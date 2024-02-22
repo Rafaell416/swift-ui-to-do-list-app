@@ -12,10 +12,26 @@ struct ProfileView: View {
 		
     var body: some View {
 			NavigationView {
-				VStack {
-					Text("Profile")
+				if let user = viewModel.user {
+					VStack {
+						Image(systemName: "person.circle")
+							.resizable()
+							.aspectRatio(contentMode: .fit)
+							.foregroundColor(.blue)
+							.frame(width: 125, height: 125)
+						
+						VStack(alignment: .leading) {
+							Text("Name: \(user.name)").padding(.bottom)
+							Text("Email: \(user.email)").padding(.bottom)
+							TLButton(title: "Logout", background: .red) {
+								viewModel.logout()
+							}.padding(.vertical)
+						}.padding()
+					}
+					.navigationTitle("Profile")
+				} else {
+					Text("Loading profile...")
 				}
-				.navigationTitle("Profile")
 			}
     }
 }
