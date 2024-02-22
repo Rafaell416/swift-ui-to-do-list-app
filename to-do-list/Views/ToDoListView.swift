@@ -8,36 +8,42 @@
 import SwiftUI
 
 struct ToDoListView: View {
-	@StateObject var viewModel = TodoListViewViewModel()
-	
-	private let userId: String
+	@StateObject var viewModel: TodoListViewViewModel
 	
 	init(userId: String) {
-		self.userId = userId
+		self._viewModel = StateObject(wrappedValue: TodoListViewViewModel(userId: userId))
 	}
 	
-    var body: some View {
-			NavigationView {
-				VStack {
-					Text("Hello, World!")
-					Text("📍ToDoListView")
+	var body: some View {
+		NavigationView {
+			VStack {
+				List(viewModel.items) { item in
+					ToDoListItemView(item: item)
+						.swipeActions {
+							Button("Delete") {
+								viewModel.deleteItem(itemId: item.id)
+							}
+							.tint(.red)
+						}
 				}
-				.navigationTitle("To Do List")
-				.toolbar {
-					Button {
-						viewModel.showingNewItemView = true
-					} label: {
-						Image(systemName: "plus")
-					}
-				}.sheet(isPresented: $viewModel.showingNewItemView) {
-					NewItemView(newItemPresented: $viewModel.showingNewItemView)
-				}
+				.listStyle(PlainListStyle())
 			}
-    }
+			.navigationTitle("To Do List")
+			.toolbar {
+				Button {
+					viewModel.showingNewItemView = true
+				} label: {
+					Image(systemName: "plus")
+				}
+			}.sheet(isPresented: $viewModel.showingNewItemView) {
+				NewItemView(newItemPresented: $viewModel.showingNewItemView)
+			}
+		}
+	}
 }
 
 struct ToDoListView_Previews: PreviewProvider {
-    static var previews: some View {
-			ToDoListView(userId: "1")
-    }
+	static var previews: some View {
+		ToDoListView(userId: "RfBhgLftMaOrikt4JIjWMHBBII93")
+	}
 }
